@@ -35,8 +35,8 @@ The Bull's Gazette is a dynamic, modern, and fully functional news platform insp
 ### Local Deployment
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-name/bullsgazette.git
-   cd bullsgazette
+   git clone https://github.com/OswaldKardingson/TheBullsGazette.git
+cd TheBullsGazette
    ```
 
 2. **Backend Setup:**
