@@ -1,19 +1,33 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const ArticlePage = () => {
     const { id } = useParams();
     const [article, setArticle] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/articles/${id}`)
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch the article.');
+                }
+                return response.json();
+            })
             .then((data) => setArticle(data))
-            .catch((error) => console.error('Error fetching article:', error));
+            .catch((err) => {
+                console.error('Error fetching article:', err);
+                setError('Unable to load the article. Please try again later.');
+            });
     }, [id]);
 
-    if (!article) return <div>Loading...</div>;
+    if (error) {
+        return <div className="text-red-500 text-center">{error}</div>;
+    }
+
+    if (!article) {
+        return <div className="text-center">Loading article...</div>;
+    }
 
     return (
         <div className="container mx-auto p-4">

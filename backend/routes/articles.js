@@ -1,29 +1,21 @@
-
+// Location: backend/routes/articles.js
 const express = require('express');
 const router = express.Router();
-const pool = require('../db');
-const { authenticateToken } = require('../middleware/auth');
+const { getAllArticles, getArticleById } = require('../controllers/articleController');
+const { addArticle } = require('../controllers/articleController');
+const { deleteArticle } = require('../controllers/articleController');
 
-// Get all articles
-router.get('/', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM articles ORDER BY created_at DESC');
-        res.json(result.rows);
-    } catch (error) {
-        res.status(500).send('Server Error');
-    }
-});
+// Route to get all articles
+router.get('/', getAllArticles);
 
-// Get a single article
-router.get('/:id', authenticateToken, async (req, res) => {
-    try {
-        const { id } = req.params;
-        const result = await pool.query('SELECT * FROM articles WHERE id = $1', [id]);
-        if (result.rows.length === 0) return res.status(404).send('Article not found');
-        res.json(result.rows[0]);
-    } catch (error) {
-        res.status(500).send('Server Error');
-    }
-});
+// Route to get a specific article by ID
+router.get('/:id', getArticleById);
+
+// Route for Admin to Add Article
+router.post('/', addArticle);
+
+// Route for Admin to Delete Articles
+router.delete('/:id', deleteArticle);
 
 module.exports = router;
+
