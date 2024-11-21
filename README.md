@@ -75,7 +75,7 @@ cd backend
 npm install
 
 # Create a .env file with the following variables
-DATABASE_URL=postgresql://your_username:your_password@localhost:5432/your_database_name
+DATABASE_URL=postgresql://your_username:your_password@localhost:5432/your_database_name  //default postgresql username is postgres
 JWT_SECRET=your_secret_key
 STRIPE_SECRET_KEY=your_stripe_key //use random number for testing
 
