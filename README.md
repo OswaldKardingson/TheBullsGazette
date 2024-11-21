@@ -72,20 +72,18 @@ cd TheBullsGazette
 
 ### **2. Backend Setup**
 cd backend
-npm install
+npm start
 
-# Create a .env file with the following variables
-DATABASE_URL=postgresql://your_username:your_password@localhost:5432/your_database_name  //default postgresql username is postgres
+# Edit the .env file with your own database credentials
+DATABASE_URL=postgresql://your_username:your_password@localhost:5432/your_database_name  //default postgresql username is postgres1 and pass postgres
 JWT_SECRET=your_secret_key
 STRIPE_SECRET_KEY=your_stripe_key //use random number for testing
 
 # Set up the database
 CREATE DATABASE bulls_gazette;
 
-# Populate the database
-node utils/seedDatabase.js
-
-# Start the backend server
+### **3. Scraper Setup**
+cd ../scraper
 npm start
 
 ### **3. Frontend Setup**
@@ -95,11 +93,9 @@ npm start
 
 # The frontend will run at http://localhost:3000
 
-### **4. Scraper Setup**
+### **4. Running Scraper **
 cd ../scraper
-node scrapeContent.js
-
-# The script will fetch content and save it in articles.json
+node scrapeContent.js // Populates the database with TBG articles
 
 ## Deployment Instructions
 
