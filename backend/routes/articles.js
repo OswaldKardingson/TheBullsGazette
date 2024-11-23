@@ -10,10 +10,10 @@ router.get('/', getAllArticles);
 // Route to get a specific article by ID
 router.get('/:id', getArticleById);
 
-// Route for Admin to Add Article
+// Route to add a new article (Admin or Scraper)
 router.post('/', addArticle);
 
-// Route for Admin to Delete Articles
+// Route to delete an article by ID
 router.delete('/:id', deleteArticle);
 
 // New Route: Trigger Scraper
@@ -22,9 +22,9 @@ router.post('/scrape', async (req, res) => {
         await scrapeArticles(); // Function to call the scraper logic
         res.status(200).json({ message: 'Scraper triggered successfully' });
     } catch (error) {
+        console.error('Error triggering scraper:', error.message);
         res.status(500).json({ error: 'Error triggering scraper' });
     }
 });
 
 module.exports = router;
-
