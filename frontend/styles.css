@@ -1,0 +1,156 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+    background: #20232a;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.site-header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.site-nav a:hover {
+    color: #61dafb;
+}
+
+/* Hero Section */
+.hero {
+    background: #f5f5f5;
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+.hero-article {
+    display: flex;
+    gap: 20px;
+}
+
+.hero img {
+    max-width: 50%;
+    border-radius: 8px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #20232a;
+}
+
+.hero p {
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background: #20232a;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background: #61dafb;
+}
+
+/* Articles Grid */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.article-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.article-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.article-card p {
+    color: #555;
+}
+
+/* Categories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category-block {
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #20232a;
+}
+
+.category-block:hover {
+    background: #61dafb;
+    color: #fff;
+}
+
+/* Footer */
+.site-footer {
+    background: #20232a;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.site-footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.site-footer a {
+    color: #61dafb;
+    text-decoration: none;
+    margin: 0 10px;
+}
